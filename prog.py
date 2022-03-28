@@ -18,3 +18,4 @@ print(d.__sizeof__())
 
 ex2 =  list('список')
 print(ex2)
+print(dir())
