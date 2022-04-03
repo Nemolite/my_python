@@ -15,3 +15,16 @@ for fin in a:
 
  
 
+# Работа с фйлами xlsx
+
+import openpyxl
+wb = openpyxl.load_workbook('myfile.xlsx')
+sheet = wb['main']
+val = sheet['A1'].value
+print(val)
+val = sheet['B1'].value
+print(val)
+print(type(val))
+wb.close()
+
+
