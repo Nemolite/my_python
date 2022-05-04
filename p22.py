@@ -5,6 +5,8 @@ class Semelein:
 
     def __init__(self,fio,old,ps,weight):
         self.verification_fio(fio)
+        self.verification_old(old)
+        self.verification_weight(weight)
 
         self.__fio = fio.split() # список
         self.__old = old # целое число
@@ -31,6 +33,11 @@ class Semelein:
     def verification_old(cls,old):
         if type(old) != int or old <14 or old >120:
             raise TypeError('Возраст должен быть целым числом в диапозоне от 14 до 120')
+
+    @classmethod
+    def verification_weight(cls, weight):
+        if type(weight) != float or weight < 20:
+            raise TypeError('Вес должен быть вещественным числом от 20')
 
 obj = Semelein('Вушняков Сергей Валерьевич',51,'123',83.200)
 print(obj.__dict__)
