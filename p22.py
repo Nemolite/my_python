@@ -27,6 +27,11 @@ class Semelein:
             if len(s.strip(letters))!=0:
                 raise TypeError('В ФИО нужно использовать только буквы')
 
+    @classmethod
+    def verification_old(cls,old):
+        if type(old) != int or old <14 or old >120:
+            raise TypeError('Возраст должен быть целым числом в диапозоне от 14 до 120')
+
 obj = Semelein('Вушняков Сергей Валерьевич',51,'123',83.200)
 print(obj.__dict__)
 
