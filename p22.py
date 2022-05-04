@@ -7,10 +7,11 @@ class Semelein:
         self.verification_fio(fio)
         self.verification_old(old)
         self.verification_weight(weight)
+        self.verification_ps(ps)
 
         self.__fio = fio.split() # список
         self.__old = old # целое число
-        self.__pass = ps # строка
+        self.__ps = ps # строка
         self.__weight = weight
 
     @classmethod
@@ -39,6 +40,17 @@ class Semelein:
         if type(weight) != float or weight < 20:
             raise TypeError('Вес должен быть вещественным числом от 20')
 
-obj = Semelein('Вушняков Сергей Валерьевич',51,'123',83.200)
+    @classmethod
+    def verification_ps(cls,ps):
+        if type(ps)!=str:
+            raise TypeError('Паспорт должен быть строкой')
+        s= ps.split()
+        if len(s)!=2 or len(s[0])!=4 or len(s[1])!=6:
+            raise TypeError('Неверный формат данных паспорта')
+        for p in s:
+            if not p.isdigit():
+                raise TypeError('Номер паспорта должна быть числами')
+
+obj = Semelein('Вушняков Сергей Валерьевич',51,'1234 123456',83.200)
 print(obj.__dict__)
 
