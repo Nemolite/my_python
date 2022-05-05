@@ -33,3 +33,6 @@ class Point3D:
     @z.setter
     def z(self, x):
         self._z = z
+
+coord = Point3D(2,3,4)
+print(coord.__dict__)
