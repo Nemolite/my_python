@@ -20,8 +20,11 @@ class Clock:
 
     def __lt__(self, other):
         sc = self.__verify__data(other)
-
         return self.sec < sc
+
+    def __le__(self, other):
+        sc = self.__verify__data(other)
+        return self.sec <= sc
 
 obj1 = Clock(1000)
 print(obj1.__dict__)
@@ -32,3 +35,5 @@ print(obj2.__dict__)
 print(obj1==obj2)
 
 print(obj1<obj2)
+
+print(obj1<=obj2)
